@@ -10,9 +10,10 @@
 ## 📖 Table of Contents
 
 - [What is a Proactive Agent?](#what-is-a-proactive-agent)
-- [Top Conference Papers](#top-conference-papers)
-- [Recent arXiv Papers](#recent-arxiv-papers)
-- [Related Benchmarks](#related-benchmarks)
+- [Paper Index](#paper-index)
+  - [Top Conference Papers](#top-conference-papers)
+  - [Recent arXiv Papers](#recent-arxiv-papers)
+- [Benchmark Comparison](#benchmark-comparison)
 - [Contributing](#contributing)
 
 ---
@@ -30,134 +31,150 @@ This is in contrast to the dominant **reactive paradigm**, where agents only act
 
 ---
 
-## Top Conference Papers
+## Paper Index
 
-### ICLR 2025
+### Top Conference Papers
 
-| Title | Authors | Links |
-|-------|---------|-------|
-| **Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance** | Yaxi Lu, Shenzhi Yang, et al. | [OpenReview](https://openreview.net/forum?id=sRIU6k2TcU) · [ICLR](https://iclr.cc/virtual/2025/poster/28128) |
+#### ICLR 2025
 
-> **TL;DR:** Proposes the first data-driven framework for building proactive agents that predict and initiate user tasks without explicit instructions. Collects real-world human desktop activities, trains a reward model simulating human judgment (**ProactiveBench**), and fine-tunes LLMs to significantly boost proactiveness. Highlights the path toward genuinely proactive human-agent collaboration.
+| Title | Authors | Paper Notes | Links |
+|-------|---------|-------------|-------|
+| **Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance** | Yaxi Lu, Shenzhi Yang et al. (Fudan Univ.) | [📄 Notes](papers/conference/ICLR2025/proactive-agent-shifting-llm.md) | [OpenReview](https://openreview.net/forum?id=sRIU6k2TcU) · [ICLR](https://iclr.cc/virtual/2025/poster/28128) |
 
----
-
-### ICML 2025
-
-| Title | Authors | Links |
-|-------|---------|-------|
-| **Proactive Agents for Multi-Turn Text-to-Image Generation Under Uncertainty** | Zi Lin, Aleksander Madry, et al. | [arXiv:2412.06771](https://arxiv.org/abs/2412.06771) · [OpenReview](https://openreview.net/forum?id=f3iBgm2Zi0) |
-
-> **TL;DR:** Studies the alignment problem in text-to-image generation by introducing proactive T2I agents that actively ask clarification questions when uncertain about user intent, and present their uncertainty beliefs in an editable interface. Moves T2I generation from a one-shot guessing game to a collaborative, iterative dialogue.
+> Proposes the first data-driven framework for building proactive agents that predict and initiate user tasks without explicit instructions. Introduces **ProactiveBench** — a reward model trained to simulate human judgment of proactiveness, used for fine-tuning LLMs to be significantly more proactive.
 
 ---
 
-### NeurIPS 2025
+#### ICML 2025
 
-| Title | Authors | Links |
-|-------|---------|-------|
-| **ContextAgent: Context-Aware Proactive LLM Agents with Open-world Sensory Perceptions** | Columbia ICSL | [arXiv:2505.14668](https://arxiv.org/abs/2505.14668) · [NeurIPS](https://neurips.cc/virtual/2025/poster/115593) |
+| Title | Authors | Paper Notes | Links |
+|-------|---------|-------------|-------|
+| **Proactive Agents for Multi-Turn Text-to-Image Generation Under Uncertainty** | Zi Lin, Aleksander Madry et al. | [📄 Notes](papers/conference/ICML2025/proactive-t2i-uncertainty.md) | [arXiv:2412.06771](https://arxiv.org/abs/2412.06771) · [OpenReview](https://openreview.net/forum?id=f3iBgm2Zi0) |
 
-> **TL;DR:** Introduces ContextAgent, the first proactive agent that fuses multi-dimensional sensory contexts from wearables (video, audio, etc.) to predict when and how to proactively assist users. Unlike prior agents confined to desktop UIs, ContextAgent operates in open-world scenarios. Demonstrates strong performance on proactive service prediction and tool-calling tasks.
-
----
-
-### AAMAS 2025
-
-| Title | Authors | Links |
-|-------|---------|-------|
-| **The Next Level of Long-Term Agent Autonomy — Proactively Learning New Knowledge and Abilities** | Hermine J. EP et al. | [PDF](https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p2859.pdf) |
-
-> **TL;DR:** Explores a new research direction where agents proactively decide what new knowledge and abilities to acquire, framed via epistemic reasoning and policy learning. Highlights ethical challenges of agents with high autonomy that can self-direct their own learning — a critical open problem for long-term agentic AI systems.
+> Studies the alignment problem in T2I generation. Introduces proactive T2I agents that actively ask clarification questions when uncertain about user intent, and present their uncertainty beliefs as an editable interface. Transforms image generation from one-shot guessing into collaborative multi-turn dialogue.
 
 ---
 
-## Recent arXiv Papers
+#### NeurIPS 2025
 
-### 2025 — January
+| Title | Authors | Paper Notes | Links |
+|-------|---------|-------------|-------|
+| **ContextAgent: Context-Aware Proactive LLM Agents with Open-world Sensory Perceptions** | Columbia ICSL | [📄 Notes](papers/conference/NeurIPS2025/context-agent.md) | [arXiv:2505.14668](https://arxiv.org/abs/2505.14668) · [NeurIPS](https://neurips.cc/virtual/2025/poster/115593) |
 
-| Title | Date | Links |
-|-------|------|-------|
-| **Proactive Conversational Agents with Inner Thoughts** | Jan 1, 2025 | [arXiv:2501.00383](https://arxiv.org/abs/2501.00383) |
-| **YETI (YET to Intervene): Proactive Interventions by Multimodal AI Agents in Augmented Reality** | Jan 16, 2025 | [arXiv:2501.09355](https://arxiv.org/abs/2501.09355) |
-
-#### Proactive Conversational Agents with Inner Thoughts `2501.00383`
-> Proposes a conversational agent with an **inner thought** mechanism that tracks latent user states and goals across turns, enabling the agent to proactively steer conversations — asking follow-up questions or suggesting next steps — without waiting for the user to explicitly request them. Addresses cs.HC and cs.AI.
-
-#### YETI: Proactive Interventions by Multimodal AI Agents in AR `2501.09355`
-> Introduces YETI, a multimodal agent framework for **Augmented Reality** environments that proactively intervenes to assist users in day-to-day tasks. The agent monitors the user's context through multimodal perception and decides when to proactively deliver information or guidance, rather than waiting to be summoned.
+> Introduces the first proactive agent that fuses multi-dimensional sensory contexts from wearables (video, audio, etc.) to predict when and how to proactively assist users in open-world scenarios. Outperforms all baselines on proactive service prediction and tool-calling tasks.
 
 ---
 
-### 2025 — February
+#### AAMAS 2025
 
-| Title | Date | Links |
-|-------|------|-------|
-| **ProAgentBench: Evaluating LLM Agents for Proactive Assistance with Real-World Data** | Feb 6, 2025 | [arXiv:2602.04482](https://arxiv.org/abs/2602.04482) |
-| **ProactiveMobile: A Comprehensive Benchmark for Boosting Proactive Intelligence on Mobile Devices** | Feb 28, 2025 | [arXiv:2602.21858](https://arxiv.org/abs/2602.21858) |
+| Title | Authors | Paper Notes | Links |
+|-------|---------|-------------|-------|
+| **The Next Level of Long-Term Agent Autonomy — Proactively Learning New Knowledge and Abilities** | Hermine J. EP et al. | [📄 Notes](papers/conference/AAMAS2025/proactive-long-term-autonomy.md) | [PDF](https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p2859.pdf) |
 
-#### ProAgentBench `2602.04482`
-> The first rigorous benchmark for evaluating proactive agents within continuous real-world environments. Provides structured evaluation across tasks where agents must decide *when* and *how* to proactively assist users, going beyond passive task completion.
-
-#### ProactiveMobile `2602.21858`
-> A comprehensive benchmark for proactive intelligence on mobile devices. Formalizes proactive tasks as inferring **latent user intent** across 4 dimensions of on-device contextual signals, with 3,660+ instances spanning 14 real-world scenarios and 63 API functions. Fine-tuned Qwen2.5-VL-7B outperforms o1 and GPT-5 in success rate (19.15% vs 15.71%), highlighting proactivity as a learnable but currently lacking competency in MLLMs.
+> Elevates proactivity to a meta-level: agents that autonomously decide *what new knowledge and abilities to acquire*. Frames this via epistemic reasoning and qualitative learning. Highlights critical ethical challenges when agents can self-direct their own learning.
 
 ---
 
-### 2024 — December (Accepted to 2025 Conferences / Strong Preprints)
+### Recent arXiv Papers
 
-| Title | Date | Links |
-|-------|------|-------|
-| **ProAgent: Harnessing On-Demand Sensory Contexts for Proactive LLM Agent Systems** | Dec 2024 | [arXiv:2512.06721](https://arxiv.org/abs/2512.06721) |
-| **SmartSnap: Proactive Evidence Seeking for Self-Verifying Agents** | Dec 2024 | [arXiv:2512.22322](https://arxiv.org/abs/2512.22322) |
+#### January 2025
 
-#### ProAgent `2512.06721`
-> Explores **on-demand sensory context** acquisition for proactive agents — rather than always ingesting all sensor streams, the agent decides which sensory inputs to query based on its current uncertainty. Addresses edge-platform deployment constraints for proactive LLM systems.
+| Title | Date | Paper Notes | arXiv |
+|-------|------|-------------|-------|
+| **Proactive Conversational Agents with Inner Thoughts** | Jan 1, 2025 | [📄 Notes](papers/arxiv/2025-01/proactive-conversational-inner-thoughts.md) | [2501.00383](https://arxiv.org/abs/2501.00383) |
+| **YETI (YET to Intervene): Proactive Interventions by Multimodal AI Agents in AR** | Jan 16, 2025 | [📄 Notes](papers/arxiv/2025-01/yeti-proactive-ar-intervention.md) | [2501.09355](https://arxiv.org/abs/2501.09355) |
 
-#### SmartSnap `2512.22322`
-> Introduces the **Self-Verifying Agent**: an agent that proactively seeks snapshot evidence to *prove* task completion, formalizing this as an augmented MDP. Reframes verification from passive post-hoc analysis to an active, proactive process integrated into task execution.
+**Proactive Conversational Agents with Inner Thoughts** (`2501.00383`)
+> Introduces an *inner thought* mechanism that tracks latent user states and goals across conversation turns, enabling agents to proactively steer dialogues — asking follow-up questions or suggesting next steps without waiting for explicit requests.
 
----
-
-### 2024 — October
-
-| Title | Date | Links |
-|-------|------|-------|
-| **Measuring Proactive Problem Solving in LLM Agents** | Oct 2024 | [arXiv:2510.19771](https://arxiv.org/abs/2510.19771) |
-| **RoboOmni: Proactive Robot Manipulation in Omni-modal Context** | Oct 2024 | [arXiv:2510.23763](https://arxiv.org/abs/2510.23763) |
-
-#### Measuring Proactive Problem Solving `2510.19771`
-> Proposes a benchmark where agents are given user priorities and a personal datastore, then must **proactively identify and resolve bottlenecks** without being told what the problems are. Evaluates GPT-4.1, Claude Opus, Kimi-K2, DeepSeek-R1 and others.
-
-#### RoboOmni `2510.23763`
-> A proactive robotic manipulation system in omni-modal context (text, audio, vision). Features **proactive clarification** — when facing ambiguous instructions, the robot asks targeted questions rather than guessing, combined with rich multimodal scene understanding.
+**YETI: Proactive Interventions by Multimodal AI Agents in AR** (`2501.09355`)
+> A multimodal agent framework for Augmented Reality that monitors users through multi-sensor perception and proactively intervenes at the right moment. Addresses the core challenge of *when* to intervene without being intrusive.
 
 ---
 
-## Related Benchmarks
+#### February 2025
 
-| Benchmark | Paper | Focus |
-|-----------|-------|-------|
-| **ProactiveBench** | Proactive Agent (ICLR 2025) | Desktop activity-based proactive task prediction |
-| **ProAgentBench** | arXiv:2602.04482 | Real-world proactive assistance evaluation |
-| **ProactiveMobile** | arXiv:2602.21858 | Mobile device proactive intelligence, 63 APIs |
-| **AR-Bench** | ICML 2025 (AR-Bench) | Active reasoning in agentic scenarios |
+| Title | Date | Paper Notes | arXiv |
+|-------|------|-------------|-------|
+| **ProAgentBench: Evaluating LLM Agents for Proactive Assistance with Real-World Data** | Feb 6, 2025 | [📄 Notes](papers/arxiv/2025-02/proagentbench.md) | [2602.04482](https://arxiv.org/abs/2602.04482) |
+| **ProactiveMobile: A Comprehensive Benchmark for Boosting Proactive Intelligence on Mobile Devices** | Feb 28, 2025 | [📄 Notes](papers/arxiv/2025-02/proactivemobile.md) | [2602.21858](https://arxiv.org/abs/2602.21858) |
+
+**ProAgentBench** (`2602.04482`)
+> The first rigorous benchmark using real-world data to evaluate proactive agents in continuous environments. Reveals that current LLMs tend to either over-trigger or never proactively assist — timing judgment is harder than content generation.
+
+**ProactiveMobile** (`2602.21858`)
+> Comprehensive mobile proactive intelligence benchmark: 3,660+ instances across 14 scenarios, 63 APIs. Key finding: fine-tuned 7B Qwen2.5-VL (19.15%) beats o1 (15.71%) and GPT-5 (7.39%), proving proactivity is a *learnable* specialized skill.
+
+---
+
+#### October–December 2024 (Strong Preprints)
+
+| Title | Date | Paper Notes | arXiv |
+|-------|------|-------------|-------|
+| **Measuring Proactive Problem Solving in LLM Agents** | Oct 2024 | [📄 Notes](papers/arxiv/2024-10-12/measuring-proactive-problem-solving.md) | [2510.19771](https://arxiv.org/abs/2510.19771) |
+| **RoboOmni: Proactive Robot Manipulation in Omni-modal Context** | Oct 2024 | [📄 Notes](papers/arxiv/2024-10-12/roboomni-proactive-manipulation.md) | [2510.23763](https://arxiv.org/abs/2510.23763) |
+| **ProAgent: Harnessing On-Demand Sensory Contexts for Proactive LLM Agent Systems** | Dec 2024 | [📄 Notes](papers/arxiv/2024-10-12/proagent-on-demand-sensing.md) | [2512.06721](https://arxiv.org/abs/2512.06721) |
+| **SmartSnap: Proactive Evidence Seeking for Self-Verifying Agents** | Dec 2024 | [📄 Notes](papers/arxiv/2024-10-12/smartsnap-self-verifying.md) | [2512.22322](https://arxiv.org/abs/2512.22322) |
+
+**Measuring Proactive Problem Solving** (`2510.19771`)
+> Benchmark where agents must proactively discover and resolve user *bottlenecks* without being told what the problems are. Tests GPT-5, Claude 4.1 Opus, Kimi-K2, DeepSeek-R1 and others.
+
+**RoboOmni** (`2510.23763`)
+> Proactive robot manipulation system fusing text/vision/audio. Features proactive clarification: when instructions are ambiguous, the robot asks targeted questions instead of guessing.
+
+**ProAgent (On-Demand Sensing)** (`2512.06721`)
+> Proposes on-demand sensing for proactive agents — the agent dynamically decides *which sensors to query* based on current uncertainty, enabling edge-device deployment.
+
+**SmartSnap** (`2512.22322`)
+> Introduces the Self-Verifying Agent: agents that proactively collect screenshot evidence *during* task execution to prove completion. Formalizes this as an augmented MDP.
+
+---
+
+## Benchmark Comparison
+
+| Benchmark | Paper | Venue | Focus | Scale |
+|-----------|-------|-------|-------|-------|
+| **ProactiveBench** | Proactive Agent | ICLR 2025 | Desktop activity → task prediction | Real-world human activities |
+| **ProAgentBench** | arXiv:2602.04482 | arXiv 2025 | Real-world proactive assistance | Continuous environment |
+| **ProactiveMobile** | arXiv:2602.21858 | arXiv 2025 | Mobile device proactive intelligence | 3,660+ instances, 14 scenarios |
+| **YETI Benchmark** | arXiv:2501.09355 | arXiv 2025 | AR proactive intervention timing | Multimodal AR tasks |
 
 ---
 
 ## Contributing
 
-We welcome contributions! If you know of a relevant paper that belongs here:
+We welcome contributions! If you know of a relevant paper:
 
-1. Fork the repo
-2. Add the paper to the appropriate section in `README.md`
-3. Submit a pull request
+1. **Fork** this repo
+2. **Add a paper note** in the appropriate `papers/` subdirectory (use existing files as template)
+3. **Update** the table in `README.md`
+4. **Submit** a pull request
 
-**Format:**
+**Paper note template:**
+```markdown
+# Paper Title
+
+## 基本信息
+| 字段 | 内容 |
+|------|------|
+| **会议/来源** | ... |
+| **arXiv ID** | [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX) |
+
+## 一句话总结
+...
+
+## 动机
+...
+
+## 方法
+...
+
+## 核心结论
+...
+
+## 关键词
+`Proactive Agent` · ...
 ```
-| **Paper Title** | Authors | [arXiv:XXXX.XXXXX](link) |
-```
-With a 1–2 sentence summary in the block quote below.
 
 ---
 
